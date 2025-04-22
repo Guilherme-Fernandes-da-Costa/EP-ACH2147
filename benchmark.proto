@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package benchmark;
+
+// Definição de tipo complexo para teste
+message ComplexObject {
+  string name = 1;
+  int64 id = 2;
+  repeated double values = 3;
+  string description = 4;
+}
+
+// Definição do serviço de benchmark
+service BenchmarkService {
+  // Operação sem argumentos e sem valor de retorno
+  rpc NoArgsNoReturn (EmptyMessage) returns (EmptyMessage) {}
+  
+  // Operação com um argumento long e retorno long
+  rpc SingleLongArgLongReturn (LongMessage) returns (LongMessage) {}
+  
+  // Operação com oito argumentos long e retorno long
+  rpc EightLongArgsLongReturn (EightLongMessage) returns (LongMessage) {}
+  
+  // Operação com um argumento String e retorno String
+  rpc StringArgStringReturn (StringMessage) returns (StringMessage) {}
+  
+  // Operação com tipo complexo como argumento e retorno
+  rpc ComplexArgComplexReturn (ComplexObject) returns (ComplexObject) {}
+}
+
+// Mensagens para as operações
+message EmptyMessage {}
+
+message LongMessage {
+  int64 value = 1;
+}
+
+message EightLongMessage {
+  int64 value1 = 1;
+  int64 value2 = 2;
+  int64 value3 = 3;
+  int64 value4 = 4;
+  int64 value5 = 5;
+  int64 value6 = 6;
+  int64 value7 = 7;
+  int64 value8 = 8;
+}
+
+message StringMessage {
+  string value = 1;
+}
