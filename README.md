@@ -5,10 +5,10 @@ Esse projeto é dividido em dois cenários, o primeiro é Cliente e Servidor na 
 <br>
 Para executar o cenário 1 de testes siga o passo a passo:
 1 - Torne o arquivo 'run_experiment.sh' executável
-  <samp>chmod +x run_experiment.sh<samp>
+  chmod +x run_experiment.sh
   <br>
 2 - Execute o script:
-  <samp>./run_experiment.sh<samp>
+  ./run_experiment.sh
 <br>
 Para executar o cenário 2 de testes siga o passo a passo:
 <br>
